@@ -1,0 +1,51 @@
+$title-bg-color: orange;
+$initial-bg-color: #fff;
+$dark-bg-color: #000;
+$primary-btn-color: brown;
+$primary-btn-light-color: #AED6F1;
+$secondary-btn-color: grey;
+$title-position: center;
+$title-top-padding: 10px;
+$grid-display: grid;
+$grid-repeat: repeat(2, 1fr);
+$grid-gap: 10px;
+
+
+
+// Set color text based on bg color.
+@function set-text-color($color){
+    @if (lightness($color)> 70){
+        @return #000;
+    }@else {
+        @return #fff;
+    }
+}
+
+
+// Set background & text color
+@mixin set-bg-color($color) {
+    background-color: $color;
+    color: set-text-color($color);
+}
+
+// Set margin and padding classes.
+
+$space-amounts: (1,2,3,4,5);
+
+@each $space in $space-amounts {
+    .m-#{$space}{
+        margin: #{$space}rem;
+    }
+
+    .my-#{$space}{
+        margin: #{$space}rem 0;
+    }
+
+    .p-#{$space}{
+        margin: #{$space}rem;
+    }
+
+    .py-#{$space}{
+        margin: #{$space}rem 0;
+    }
+}

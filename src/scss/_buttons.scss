@@ -1,0 +1,28 @@
+a:hover{
+    text-decoration: none;
+}
+
+// define all btn styles you need.
+%btn{
+   display: inline-block;
+   border-radius: 5px;
+   padding: 8px 20px;
+   margin: 3px;
+   color: #fff;
+
+   &:hover{
+      transform: scale(.98) 
+   }
+   
+}
+
+// Use the %btn like a JS spread operator. 
+.btn-primary{
+    @extend %btn;
+    @include set-bg-color($primary-btn-color);
+}
+
+.btn-secondary{
+    @extend %btn;
+    @include set-bg-color($secondary-btn-color);
+}
